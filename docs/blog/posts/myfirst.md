@@ -6,8 +6,8 @@ date:
 pin: true 
 ...
 links:
-  - index.md
-  - blog/index.md
+  - ../index.md
+  - ../../index.md
 ---
 
 
