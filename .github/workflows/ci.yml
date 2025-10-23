@@ -1,24 +1,53 @@
-name: ci
+# 工作流名称
+name: Deploy GitHub Pages site
+
+# 触发条件：推送到 main 分支时
 on:
   push:
     branches:
-      - master
-      - main
+      - main # 或者 master
+
+# 允许此工作流写入 GitHub Pages 的部署
 permissions:
-  contents: write
-# workflow 的具体内容
+  contents: read
+  pages: write
+  id-token: write
+
+# 定义一个并发组，这样同时只有一个部署在运行
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
-    # 创建一个 Ubuntu 容器
+  # 构建任务
+  build:
     runs-on: ubuntu-latest
     steps:
-      # 先打开 main 分支
-      - uses: actions/checkout@v4
-      # 再安装 Python 和相关环境
-      - uses: actions/setup-python@v5
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      # 使用包管理工具 pip 安装 mkdocs-material
-      - run: pip install mkdocs-material
-      # 使用 mkdocs-material 构建网站并部署到 gh-pages 分支
-      - run: mkdocs gh-deploy --force
+      - name: Install dependencies
+        run: pip install mkdocs-material
+      - name: Build the site
+        run: mkdocs build # 注意：这里只构建，不部署
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 从 'site' 文件夹上传
+          path: './site'
+
+  # 部署任务
+  deploy:
+    # 需要等待 'build' 任务成功
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
