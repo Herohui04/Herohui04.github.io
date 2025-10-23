@@ -4,8 +4,22 @@ site_url: http://www.example.com
 
 theme:
   name: material
+  palette:
+    # 日间模式
+    - scheme: default
+      primary: indigo # 主色
+      accent: pink   # 强调色
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到夜间模式
+    # 夜间模式
+    - scheme: slate
+      primary: black
+      accent: lime
+      toggle:
+        icon: material/weather-night
+        name: 切换到日间模式
 
 plugins:
   - search
   - blog
-
