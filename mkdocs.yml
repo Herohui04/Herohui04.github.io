@@ -1,7 +1,11 @@
-site_name: My site
-site_url: https://mydomain.org/mysite
+site_name: Blog Tutorial
+site_description: an example blog set up following the tutorial
+site_url: http://www.example.com
+
 theme:
   name: material
-  palette:
 
+plugins:
+  - search
+  - blog
 

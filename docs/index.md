@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Welcome to Herohui's Lab
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
