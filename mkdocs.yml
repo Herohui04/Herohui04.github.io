@@ -1,7 +1,9 @@
-site_name: Blog Tutorial
-site_description: an example blog set up following the tutorial
-site_url: http://www.example.com
+# [Info]
+site_name: Herohui's Site
+site_url: https://Herohui04.github.io
+site_author: xi-luhui
 
+# [Theme Configuration]
 theme:
   name: material
   palette:
@@ -23,3 +25,7 @@ theme:
 plugins:
   - search
   - blog
+lang:
+  - zh
+  - en
+  - ja
