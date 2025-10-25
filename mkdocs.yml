@@ -24,8 +24,6 @@ theme:
 
 plugins:
   - search
-  - blog
-lang:
-  - zh
-  - en
-  - ja
+      
+  - tags
+
