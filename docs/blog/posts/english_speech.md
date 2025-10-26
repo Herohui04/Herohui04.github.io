@@ -2,9 +2,10 @@
 date:
   created: 2025-04-23
   updated: 2025-04-23
+  title: Be a Magnet🧲--Your Silent Superpower
 ---
 
-# Be a Magnet🧲: Your Silent Superpower
+# Be a Magnet🧲--Your Silent Superpower
 
 Hello everyone, imagine holding two magnets. They connect without words, transform chaos into order. Today, I propose:We
 are magnets.Here’s how to unleash that power.
