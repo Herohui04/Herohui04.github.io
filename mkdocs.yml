@@ -6,6 +6,8 @@ site_author: xi-luhui
 # [Theme Configuration]
 theme:
   name: material
+  features:
+    - content.code.copy
   palette:
     # 日间模式
     - scheme: default
@@ -24,6 +26,19 @@ theme:
 
 plugins:
   - search
-      
+
   - tags
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      # 显示行号
+      linenums: true
+      # 显示编程语言名称
+      auto_title: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 

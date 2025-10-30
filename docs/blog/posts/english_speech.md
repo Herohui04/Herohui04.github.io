@@ -2,7 +2,7 @@
 date:
   created: 2025-04-23
   updated: 2025-04-23
-  title: Be a Magnet🧲--Your Silent Superpower
+  status: new
 ---
 
 # Be a Magnet🧲--Your Silent Superpower
